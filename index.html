@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Endo Log</title>
+  <meta name="description" content="Private endometriosis symptom, pain and food log.">
+  <meta name="theme-color" content="#f7f3ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1b1917" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Endo Log">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 id="title">Today</h1>
+    <button class="icon-btn" id="settingsBtn" aria-label="Settings">
+      <span aria-hidden="true">⚙︎</span>
+    </button>
+  </header>
+  <main id="view" tabindex="-1"></main>
+  <nav class="tabbar" aria-label="Main">
+    <button data-tab="today" class="active"><span class="ti">●</span>Today</button>
+    <button data-tab="history"><span class="ti">▦</span>History</button>
+    <button data-tab="insights"><span class="ti">↗</span>Insights</button>
+    <button data-tab="guide"><span class="ti">✦</span>Guide</button>
+  </nav>
+  <div id="sheet" class="sheet" hidden>
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet-head">
+        <button class="link" data-close>Cancel</button>
+        <h2 id="sheetTitle"></h2>
+        <button class="link strong" id="sheetSave">Save</button>
+      </div>
+      <form id="sheetBody" class="sheet-body" onsubmit="return false"></form>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
